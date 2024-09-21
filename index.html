@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academix</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    }
+    
+  
+
+    .login-button {
+        position:sticky;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .login-button:hover {
+        background-color: #0056b3;
+    }
+    .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+    h1 {
+        color: #333;
+        font-size: 36px;
+        margin: 0;
+    }
+    .section {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .section h1 {
+        font-size: 24px;
+        color: #007BFF;
+        margin-bottom: 20px;
+    }
+    .subject-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-items: center;
+    }
+    .subject-block {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        width: 140px;
+        text-align: center;
+    }
+    .subject-block h2 {
+        margin: 0 0 5px;
+        font-size: 16px;
+    }
+    .subject-block a {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #007BFF;
+        font-weight: bold;
+    }
+    .subject-block a:hover {
+        text-decoration: underline;
+    }
+
+    /* Hidden Signup/Login Section */
+    .auth-container {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 8px 8px 0 0;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: bottom 0.5s ease-in-out;
+    }
+    .auth-container.show-auth {
+        bottom: 0;
+    }
+    .auth-container h2 {
+        margin-bottom: 20px;
+    }
+    .auth-container form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .auth-container label {
+        margin: 10px 0 5px;
+    }
+    .auth-container input {
+        padding: 8px;
+        margin: 5px 0;
+        width: 100%;
+    }
+    .auth-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .auth-container button:hover {
+        background-color: #0056b3;
+    }
+    .auth-container .social-login {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .auth-container .social-login button {
+        width: 48%;
+        padding: 10px;
+    }
+    .auth-container .toggle-link {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .auth-container .toggle-link a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+    .auth-container .toggle-link a:hover {
+        text-decoration: underline;
+    }
+
+    /* Theme Switcher Styles */
+    .theme-switcher {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        border-radius: 50%;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+    }
+    input:checked + .slider {
+        background-color: #007BFF;
+    }
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+</style>
+        
+</head>
+<body>
+    
+  
+   
+  
+  <!-- Main Page Content -->
+<div id="main-page">
+    <a href="#" id="toggle-auth-container" class="login-button">Sign Up / Login</a>
+    <div class="container">
+    
+        <!-- Button to toggle the display of the message and picture -->
+       <h1> <button id="toggle-content-btn" style="background-color: blue; color: white; padding: 10px 20px; font-size: 16px; border: none; cursor: pointer;">Academic</button></h1>
+        <!-- Content to show/hide -->
+        <div id="academic-content" style="display: none; margin-top: 20px;">
+        
+            &nbsp;&nbsp;&nbsp; &nbsp;<p>Education is a matter of life and death to our nation.<br>&nbsp;&nbsp;&nbsp;&nbsp; The world is moving so fast that if you do not educate yourselves<br>&nbsp;&nbsp;&nbsp;&nbsp; you will be not only completely left behind but will be finished up.</p>
+            <img src="academix files\quideazam cig.jpg" alt="Academic Picture" style="width: 150px; height: auto; margin-left: 20px;">
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to handle the toggle functionality -->
+<script>
+    document.getElementById('toggle-content-btn').addEventListener('click', function() {
+        var content = document.getElementById('academic-content');
+        if (content.style.display === 'none') {
+            content.style.display = 'flex';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+</script>
+
+        <!-- Class 12 Book Download Section -->
+        <div class="section">
+            <h1>Class 12 Book Download PDF</h1>
+            <div class="subject-container">
+                <!-- Subject Blocks -->
+                <div class="subject-block">
+                    <h2>English</h2>
+                    <a href="academix files\2nd year english.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="subject-block">
+                    <h2>Urdu</h2>
+                    <a href="academix files\2nd year urdu.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="subject-block">
+                    <h2>Math</h2>
+                    <a href="academix files\2nd year math.pdf" target="_blank"">Download PDF</a>
+                </div>
+               <div class="subject-block">
+                    <h2>Physics</h2>
+                    <a href="academix files\2nd year physics.pdf" target="_blank"">Download PDF</a>
+                </div>
+                <div class="subject-block">
+                    <h2>Pak Study</h2>
+                    <a href="academix files\2nd year pakstudy.pdf" target="_blank"">Download PDF</a>
+                </div>
+                <div class="subject-block">
+                    <h2>Chemistry</h2>
+                    <a href="academix files\2nd year chemistry.pdf">Download PDF</a>
+                </div>
+                <div class="subject-block">
+                    <h2>Biology</h2>
+                    <a href="academix files\2nd year biology.pdf">Download PDF</a>
+                </div>
+                <div class="subject-block">
+                    <h2>Computer</h2>
+                    <a href="academix files\2nd year computer.pdf">Download PDF</a>
+                </div>
+            </div>
+        </div>
+
+       <!-- Class 12 Easy Notes Section -->
+    <div class="section">
+        <h1>Class 12 Easy Notes PDF of Subjects</h1>
+        <div class="subject-container">
+            <div class="subject-block">
+                <h2>English</h2>
+                <a href="english.html">Download PDF</a>
+            </div>
+            <div class="subject-block">
+                <h2>Urdu</h2>
+                <a href="urdu.html">Download PDF</a>
+            </div>
+            <div class="subject-block">
+                <h2>Math</h2>
+                <a href="math.html">Download PDF</a>
+            </div>
+            <div class="subject-block">
+                <h2>Physics</h2>
+                <a href="physics.html">Download PDF</a>
+            </div>
+            <div class="subject-block">
+                <h2>Pak Study</h2>
+                <a href="pakstudy.html">Download PDF</a>
+            </div>
+            <div class="subject-block">
+                <h2>Chemistry</h2>
+                <a href="chemistry.html">Download PDF</a>
+            </div>
+            <div class="subject-block">
+                <h2>Biology</h2>
+                <a href="biology.html">Download PDF</a>
+            </div>
+            <div class="subject-block">
+                <h2>Computer</h2>
+                <a href="computer.html">Download PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup / Login Section -->
+    <div id="auth-container" class="auth-container">
+        <h2 id="auth-title">Sign Up</h2>
+        <form id="auth-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="email" id="email-label">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" id="submit-btn">Sign Up</button>
+        </form>
+
+        <div class="social-login">
+            <button id="google-login" style="background-color: #DB4437; color: white;">Google</button>
+            <button id="facebook-login" style="background-color: #4267B2; color: white;">Facebook</button>
+        </div>
+
+        <p class="toggle-link">Already have an account? <a href="#" id="toggle-auth">Login</a></p>
+    </div>
+
+    <script>
+        const toggleAuthButton = document.getElementById('toggle-auth-container');
+        const authContainer = document.getElementById('auth-container');
+        const toggleAuthLink = document.getElementById('toggle-auth');
+        const authTitle = document.getElementById('auth-title');
+        const submitBtn = document.getElementById('submit-btn');
+        const emailLabel = document.getElementById('email-label');
+        const emailInput = document.getElementById('email');
+
+        toggleAuthButton.addEventListener('click', function() {
+            if (authContainer.classList.contains('show-auth')) {
+                authContainer.classList.remove('show-auth');
+                authContainer.style.bottom = '-100%';
+            } else {
+                authContainer.classList.add('show-auth');
+                authContainer.style.bottom = '0';
+            }
+        });
+
+        toggleAuthLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (authTitle.textContent === 'Sign Up') {
+                authTitle.textContent = 'Login';
+                submitBtn.textContent = 'Login';
+                emailLabel.textContent = 'Email (optional):';
+                emailInput.value = '';
+                emailInput.removeAttribute('required');
+            } else {
+                authTitle.textContent = 'Sign Up';
+                submitBtn.textContent = 'Sign Up';
+                emailLabel.textContent = 'Email:';
+                emailInput.setAttribute('required', '');
+            }
+        });
+    </script>
+      
+
+    
+
+<!-- Footer Section -->
+<footer>
+    <div>
+        <h3>Company</h3>
+     
+        <h3>About Us</h3>
+        <p>We are a small company passionate about creating innovative educational solutions. This is our first project, and we are committed to providing valuable resources to students. Stay tuned as we grow and expand our offerings!</p>
+    </div>
+    <div>
+        <h3>Job Openings</h3>
+        <p>Currently, we do not have any job openings. However, we are continuously expanding our team. Please check back later or contact us to stay updated on future opportunities.</p>
+    </div>
+    <div>
+        <h3>Contact Us</h3>
+        <p>If you have any questions or need support, feel free to reach out to us at <a href="tel:+923001234567">+92 300 1234567</a>. We are here to assist you!</p>
+    
+       
+    </div>
+    <div>
+        <h3>Customer Zone</h3>
+        
+<!-- Add these buttons and output divs to your existing HTML -->
+<button id="accountButton">Your Account</button>
+<div id="accountOutput" class="output"></div>
+
+<button id="shippingButton">Shipping Rates and Policies</button>
+<div id="shippingOutput" class="output"></div>
+
+<button id="refundsButton">Refunds and Replacements</button>
+<div id="refundsOutput" class="output"></div>
+
+<button id="trackingButton">Order Tracking</button>
+<div id="trackingOutput" class="output"></div>
+
+
+
+<script>
+    function toggleOutput(buttonId, outputId, content) {
+        const button = document.getElementById(buttonId);
+        const output = document.getElementById(outputId);
+
+        button.addEventListener('click', function() {
+            if (output.classList.contains('active')) {
+                output.classList.remove('active');
+                output.classList.add('inactive');
+            } else {
+                output.innerHTML = content;
+                output.classList.remove('inactive');
+                output.classList.add('active');
+            }
+        });
+    }
+
+    toggleOutput('accountButton', 'accountOutput', `
+        Welcome to your account dashboard. Here, you can manage your personal information, review your activities, and customize your settings.
+    `);
+
+    toggleOutput('shippingButton', 'shippingOutput', `
+        We are currently updating our shipping rates and policies to provide you with the best service possible. Please check back soon for the latest information.
+    `);
+
+    toggleOutput('refundsButton', 'refundsOutput', `
+        Our refunds and replacements policy is being refined to enhance your experience. We'll update you shortly with the new process for handling returns and receiving refunds.
+    `);
+
+    toggleOutput('trackingButton', 'trackingOutput', `
+        The order tracking feature is under development. We are working on integrating advanced tracking to provide you with real-time updates on your orders.
+    `);
+</script>
+
+ 
+    </div>
+    <div>
+        <h3>Stay Informed</h3>
+        <form>
+            <input type="email" placeholder="Your email">
+            <button type="submit">Subscribe*</button>
+        </form>
+        <p>*Subscribe to our newsletter to receive discount offers, news about content, and other important updates.</p>
+    </div>
+    <div>
+        <h3>Download Our App</h3>
+        <p>Coming Soon on <a href="#">App Store</a> | Download on <a href="#">Google Play</a></p>
+    </div>
+    <div>
+        <h3>Payment Methods</h3>
+        <p>We accept various payment methods including Debit/Credit cards, EasyPaisa, and cash-on-delivery for physical products.</p>
+    </div>
+    <div>
+        <h3>© 2024 | All rights reserved</h3>
+        <p>Made by Academix, Inc.</p>
+    </div>
+</footer>
+
+
+    
+</body>
+</html>
