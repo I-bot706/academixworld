@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Notes Download</title>
+    <style>
+        
+/* General page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Page Title */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* List of chapters */
+.chapter-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Individual chapter styling */
+.chapter-list li {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Download button styling */
+.download-btn {
+    padding: 10px 20px;
+    background-color: #370bfd; /* Light blue */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.download-btn:active {
+    transform: scale(0.95); /* Scale down on click */
+}
+
+/* Message styling */
+#message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ff0000; /* Red */
+    display: none; /* Initially hidden */
+}
+    </style>
+</head>
+<body>
+
+    <h3>Biology Notes - Select a Chapter to Download</h3>
+    <ul class="chapter-list">
+        <li>Chapter 1: <a href="downloads/english_chapter1.pdf" class="download-btn" download>Download</a></li>
+        <li>Chapter 2: <a href="downloads/english_chapter2.pdf" class="download-btn" download>Download</a></li>
+        <li>Chapter 3: <a href="downloads/english_chapter3.pdf" class="download-btn" download>Download</a></li>
+        <!-- Add more chapters -->
+    </ul>
+   
+ 
+
+    <script>
+        const message = document.getElementById('message');
+
+        // Add event listeners for the download buttons
+        document.getElementById('chapter1-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            showMessage();
+        });
+
+        document.getElementById('chapter2-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            showMessage();
+        });
+
+        document.getElementById('chapter3-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            showMessage();
+        });
+
+        function showMessage() {
+            message.style.display = 'block'; // Show the message
+        }
+    </script>
+    <a href="index.html">Back to Main Page</a>
+
+</body>
+</html>

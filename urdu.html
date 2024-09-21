@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URDU Notes Download</title>
+    <style>
+
+* General page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Page Title */
+h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #ff4081;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* List of chapters */
+.chapter-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Individual chapter styling */
+.chapter-list li {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Futuristic button styling */
+.download-btn {
+    padding: 12px 24px;
+    background-color: #ff4081;
+    border: none;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(255, 64, 129, 0.5);
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #d5006d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(255, 64, 129, 0.7);
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ffcc00;
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+    text-align: center;
+}
+
+/* Animation for message */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Back to main page link styling */
+a {
+    color: #ff4081;
+    font-size: 1.1rem;
+    margin-top: 40px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #d5006d;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+   </style>
+</head>
+<body>
+
+    <h1>URDU Notes - Select a Chapter to Download</h1>
+    <ul class="chapter-list">
+        <li>URDU GUIDE BOOK<a href="academix files/2nd year urdu notes.pdf" class="download-btn" download>Download</a></li>
+   >
+       
+    </ul>
+
+    <a href="index.html">Back to Main Page</a>
+
+</body>
+</html>
